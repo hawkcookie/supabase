@@ -22,11 +22,26 @@ import {
   SqlEditorResultCopyMarkdownClickedEvent,
   SqlEditorResultCopyJsonClickedEvent,
   TelemetryActions,
+  SignUpEvent,
+  SignInEvent,
+  RealtimeInspectorListenChannelClickedEvent,
+  RealtimeInspectorBroadcastSentEvent,
+  RealtimeInspectorMessageClickedEvent,
+  RealtimeInspectorCopyMessageClickedEvent,
+  RealtimeInspectorFiltersAppliedEvent,
+  RealtimeInspectorDatabaseRoleUpdatedEvent,
+  AssistantPromptSubmittedEvent,
+  AssistantDebugSubmittedEvent,
+  AssistantSuggestionRunQueryClickedEvent,
+  AssistantSqlDiffHandlerEvaluatedEvent,
+  AssistantEditInSqlEditorClickedEvent,
 } from 'lib/constants/telemetry'
 import { useRouter } from 'next/router'
 import type { ResponseError } from 'types'
 
 export type SendEventVariables =
+  | SignUpEvent
+  | SignInEvent
   | ConnectionStringCopiedEvent
   | CronJobCreatedEvent
   | CronJobUpdatedEvent
@@ -38,11 +53,22 @@ export type SendEventVariables =
   | FeaturePreviewsClickedEvent
   | FeaturePreviewEnabledEvent
   | FeaturePreviewDisabledEvent
+  | RealtimeInspectorListenChannelClickedEvent
+  | RealtimeInspectorBroadcastSentEvent
+  | RealtimeInspectorMessageClickedEvent
+  | RealtimeInspectorCopyMessageClickedEvent
+  | RealtimeInspectorFiltersAppliedEvent
+  | RealtimeInspectorDatabaseRoleUpdatedEvent
   | SqlEditorQuickstartClickedEvent
   | SqlEditorTemplateClickedEvent
   | SqlEditorResultDownloadCsvClickedEvent
   | SqlEditorResultCopyMarkdownClickedEvent
   | SqlEditorResultCopyJsonClickedEvent
+  | AssistantPromptSubmittedEvent
+  | AssistantDebugSubmittedEvent
+  | AssistantSuggestionRunQueryClickedEvent
+  | AssistantSqlDiffHandlerEvaluatedEvent
+  | AssistantEditInSqlEditorClickedEvent
 
   // TODO remove this once all events are documented
   | {
